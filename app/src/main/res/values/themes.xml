@@ -13,4 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.FindVenues.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:animateFirstView">true</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:theme">@style/Theme.FindVenues.ThemeToolbar</item>
+    </style>
+
+    <style name="Theme.FindVenues.ThemeToolbar" parent="ThemeOverlay.AppCompat.DayNight">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
 </resources>
