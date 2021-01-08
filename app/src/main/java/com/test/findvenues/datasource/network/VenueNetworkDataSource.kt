@@ -1,7 +1,7 @@
 package com.test.findvenues.datasource.network
 
 import com.test.findvenues.repository.entities.VenueEntity
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 import javax.inject.Named
 

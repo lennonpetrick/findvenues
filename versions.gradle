@@ -4,6 +4,7 @@ ext {
     material_version = '1.2.1'
     constraintlayout_version = '2.0.4'
     picasso_version = '2.71828'
+    lifecycle_version = '2.2.0'
     dagger_version = '2.27'
     rxkotlin_version = '3.0.1'
     rxandroid_version = '3.0.0'

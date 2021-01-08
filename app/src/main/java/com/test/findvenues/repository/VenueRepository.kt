@@ -3,7 +3,7 @@ package com.test.findvenues.repository
 import com.test.findvenues.datasource.network.VenueNetworkDataSource
 import com.test.findvenues.domain.models.Venue
 import com.test.findvenues.repository.mappers.VenueMapper
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
 internal class VenueRepository @Inject constructor(private val networkDataSource: VenueNetworkDataSource,

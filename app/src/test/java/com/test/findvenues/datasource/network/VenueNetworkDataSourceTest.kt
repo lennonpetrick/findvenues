@@ -6,7 +6,7 @@ import com.test.findvenues.repository.entities.VenueEntity
 import com.test.findvenues.repository.entities.VenueListResponse
 import com.test.findvenues.repository.entities.VenueResponse
 import com.test.findvenues.repository.entities.Wrapper
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
