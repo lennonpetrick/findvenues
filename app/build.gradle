@@ -68,6 +68,7 @@ dependencies {
 
     testImplementation "org.mockito:mockito-junit-jupiter:$mockito_version"
     testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "com.nhaarman:mockito-kotlin:$mockito_kotlin_version"
 
     androidTestImplementation "androidx.test.ext:junit:$junit_ui_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
