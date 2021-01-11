@@ -66,7 +66,19 @@ internal class VenueListViewModelTest {
         subject.searchVenues(search)
 
         stateObservable.assertNoErrors()
-                .assertLastValue { state -> state is ViewState.Loaded && state.venues == listOf(venueListView) }
+                .assertLastValue { state -> state is ViewState.VenuesLoaded && state.venues == listOf(venueListView) }
+    }
+
+    @Test
+    fun `When the searching succeeds and no venues are found, then a venues not found state is emitted`() {
+        val search = "whatever place"
+        whenever(repository.searchVenues(search, RADIUS, LIMIT)).thenReturn(Single.just(emptyList()))
+
+        val stateObservable = subject.stateObservable.test()
+        subject.searchVenues(search)
+
+        stateObservable.assertNoErrors()
+                .assertLastValue { state -> state is ViewState.VenuesNotFound }
     }
 
     @Test

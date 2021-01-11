@@ -28,7 +28,7 @@ internal class VenueListViewModel(private val repository: VenueRepository,
                 .toList()
                 .applySchedulers()
                 .subscribeBy(
-                        onSuccess = { stateSubject.onNext(ViewState.Loaded(it)) },
+                        onSuccess = { stateSubject.onNext(if (it.isEmpty()) ViewState.VenuesNotFound else ViewState.VenuesLoaded(it)) },
                         onError = { stateSubject.onNext(ViewState.Error(it.message)) }
                 )
                 .disposeInOnCleared()
@@ -39,5 +39,6 @@ internal class VenueListViewModel(private val repository: VenueRepository,
 internal sealed class ViewState {
     internal object Loading : ViewState()
     internal class Error(val errorMessage: String?) : ViewState()
-    internal class Loaded(val venues: List<VenueListView>) : ViewState()
+    internal class VenuesLoaded(val venues: List<VenueListView>) : ViewState()
+    internal object VenuesNotFound: ViewState()
 }
