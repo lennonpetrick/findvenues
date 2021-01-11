@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.test.findvenues.R
 import com.test.findvenues.databinding.ActivityVenueListBinding
 import com.test.findvenues.di.Components
+import com.test.findvenues.presentation.venuedetail.VenueDetailActivity
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.Disposable
 
@@ -53,7 +54,7 @@ class VenueListActivity : AppCompatActivity() {
     private fun setUpUiComponents() {
         venueListAdapter = VenueListAdapter(object : VenueListAdapter.ClickListener {
             override fun onVenueItemClicked(venueId: String) {
-                //TODO
+                VenueDetailActivity.start(this@VenueListActivity, venueId)
             }
         })
 
@@ -80,14 +81,14 @@ class VenueListActivity : AppCompatActivity() {
     }
 
     private fun onStateChanges(state: ViewState) {
+        if (state != ViewState.Loading) enableRefreshing(false)
+
         when (state) {
             is ViewState.Loading -> enableRefreshing(true)
             is ViewState.VenuesLoaded -> displayVenueList(state.venues)
             is ViewState.VenuesNotFound -> displayEmptyList()
             is ViewState.Error -> showDefaultError(state.errorMessage)
         }
-
-        if (state != ViewState.Loading) enableRefreshing(false)
     }
 
     private fun enableRefreshing(enable: Boolean) {

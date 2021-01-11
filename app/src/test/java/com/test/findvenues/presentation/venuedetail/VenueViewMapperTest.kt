@@ -25,9 +25,13 @@ internal class VenueViewMapperTest {
             assertEquals(model.id, view.id)
             assertEquals(model.name, view.name)
             assertEquals(model.description, view.description)
-            assertEquals(model.rating.toString(), view.rating)
             assertEquals(model.photos, view.photos)
             assertEquals(address1.plus("\n").plus(address2), view.location)
+
+            with(view.rating!!) {
+                assertEquals(R.string.venue_detail_rating, stringRes)
+                assertEquals(model.rating.toString(), value)
+            }
 
             with(model.contact!!) {
                 assertEquals(R.string.venue_detail_twitter, view.contacts[0].stringRes)

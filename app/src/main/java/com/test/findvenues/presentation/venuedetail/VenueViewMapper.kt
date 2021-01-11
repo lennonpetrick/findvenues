@@ -21,6 +21,8 @@ internal class VenueViewMapper @Inject constructor() {
             }
         } ?: emptyList()
 
-        return VenueView(venue.id, venue.name, location, contacts, venue.description, venue.rating.toString(), venue.photos)
+        val rating = venue.rating?.let { VenueView.DisplayText(R.string.venue_detail_rating, it.toString()) }
+
+        return VenueView(venue.id, venue.name, location, contacts, venue.description, rating, venue.photos)
     }
 }

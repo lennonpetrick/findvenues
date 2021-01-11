@@ -8,7 +8,7 @@ internal class VenueView(
         val location: String?,
         val contacts: List<DisplayText>,
         val description: String?,
-        val rating: String?,
+        val rating: DisplayText?,
         val photos: List<String>) {
 
     class DisplayText(@StringRes val stringRes: Int, val value: String)
