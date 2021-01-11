@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FindVenues</string>
+    <string name="venue_list_address_not_provided">Address not provided</string>
 </resources>
