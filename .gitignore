@@ -23,3 +23,6 @@ local.properties
 bin/
 gen/
 out/
+
+# Property file containing the api keys
+api_keys.properties

@@ -16,6 +16,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "API_URL", "\"https://api.foursquare.com/v2/\""
+        buildConfigField "String", "CLIENT_ID", getApiKey("client_id")
+        buildConfigField "String", "CLIENT_SECRET", getApiKey("client_secret")
     }
 
     buildTypes {
@@ -31,6 +35,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+def getApiKey(String key) {
+    Properties properties = new Properties()
+    properties.load(new FileInputStream(rootProject.file("api_keys.properties")))
+    return "\"" + properties.getProperty(key) + "\""
 }
 
 dependencies {
