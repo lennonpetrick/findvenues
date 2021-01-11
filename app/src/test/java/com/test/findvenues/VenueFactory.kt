@@ -16,8 +16,8 @@ internal object VenueFactory {
         return VenueEntity("id", "name", location, contact, "description", 10.0, photos)
     }
 
-    fun createModel(): Venue {
-        val location = Venue.Location("address", listOf("addresses"))
+    fun createModel(addresses: List<String> = listOf("addresses")): Venue {
+        val location = Venue.Location("address", addresses)
         val contact = Venue.Contact("twitter", "instagram", "phone", "facebook")
         val photos = mutableListOf("url")
         return Venue("id", "name", location, contact, "description", 10.0, photos)
