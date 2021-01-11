@@ -19,5 +19,6 @@ internal class VenueListViewMapperTest {
 
         assertEquals(model.id, view.id)
         assertEquals(model.name, view.name)
+        assertEquals(model.location.address, view.location)
     }
 }
