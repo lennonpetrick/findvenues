@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FindVenues">
-        <activity android:name=".VenuesListActivity">
+        <activity android:name=".presentation.venuelist.VenueListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

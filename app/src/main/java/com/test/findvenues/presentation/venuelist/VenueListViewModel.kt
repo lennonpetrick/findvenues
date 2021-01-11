@@ -1,5 +1,6 @@
-package com.test.findvenues.presentation
+package com.test.findvenues.presentation.venuelist
 
+import com.test.findvenues.presentation.BaseViewModel
 import com.test.findvenues.repository.VenueRepository
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Scheduler

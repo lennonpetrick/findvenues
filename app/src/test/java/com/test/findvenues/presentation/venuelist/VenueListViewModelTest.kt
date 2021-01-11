@@ -1,4 +1,4 @@
-package com.test.findvenues.presentation
+package com.test.findvenues.presentation.venuelist
 
 import com.nhaarman.mockito_kotlin.whenever
 import com.test.findvenues.assertLastValue

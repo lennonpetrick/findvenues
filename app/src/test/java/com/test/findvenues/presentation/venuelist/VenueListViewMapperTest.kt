@@ -1,4 +1,4 @@
-package com.test.findvenues.presentation
+package com.test.findvenues.presentation.venuelist
 
 import com.test.findvenues.VenueFactory
 import org.junit.jupiter.api.Assertions.assertEquals

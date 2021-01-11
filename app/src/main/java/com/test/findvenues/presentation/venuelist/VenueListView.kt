@@ -1,4 +1,4 @@
-package com.test.findvenues.presentation
+package com.test.findvenues.presentation.venuelist
 
 import com.test.findvenues.domain.models.Venue
 import javax.inject.Inject
