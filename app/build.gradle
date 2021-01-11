@@ -56,6 +56,7 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
     implementation "com.squareup.picasso:picasso:$picasso_version"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
+    implementation "com.synnapps:carouselview:$carouselview_version"
 
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
