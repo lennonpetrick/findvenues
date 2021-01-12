@@ -3,6 +3,7 @@
     <string name="default_error_message">Something went wrong: %s</string>
     <string name="venue_list_address_not_provided">Address not provided</string>
     <string name="venue_list_not_found">No venues found</string>
+    <string name="venue_list_search_hint">Search</string>
     <string name="venue_detail_rating">Rating: %s</string>
     <string name="venue_detail_twitter">Twitter: %s</string>
     <string name="venue_detail_instagram">Instagram: %s</string>

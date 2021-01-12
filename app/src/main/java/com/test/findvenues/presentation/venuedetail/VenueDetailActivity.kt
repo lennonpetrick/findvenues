@@ -3,6 +3,7 @@ package com.test.findvenues.presentation.venuedetail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -39,6 +40,7 @@ class VenueDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_venue_detail)
         setSupportActionBar(binding.toolbarContainer.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val venueId = requireNotNull(intent.extras?.getString(VENUE_ID))
         val factory = DaggerVenueDetailComponent.builder()
@@ -50,6 +52,17 @@ class VenueDetailActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, factory).get(VenueDetailViewModel::class.java)
         lifecycle.addObserver(viewModel)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onStart() {

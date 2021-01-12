@@ -3,6 +3,7 @@ package com.test.findvenues.presentation.venuelist
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -73,6 +74,7 @@ class VenueListActivity : AppCompatActivity() {
         binding.search.setOnEditorActionListener { view, keyCode, _ ->
             if (keyCode == EditorInfo.IME_ACTION_SEARCH) {
                 viewModel.searchVenues(view.text.toString())
+                hideKeyboard(view)
                 return@setOnEditorActionListener true
             }
             return@setOnEditorActionListener false
@@ -114,5 +116,12 @@ class VenueListActivity : AppCompatActivity() {
 
     private fun showDefaultError(error: String?) {
         Toast.makeText(this, getString(R.string.default_error_message, error), Toast.LENGTH_LONG).show()
+    }
+
+    private fun hideKeyboard(view: View) {
+        (getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager).apply {
+            hideSoftInputFromWindow(view.windowToken, InputMethodManager.HIDE_IMPLICIT_ONLY)
+            hideSoftInputFromWindow(view.applicationWindowToken, 0)
+        }
     }
 }
