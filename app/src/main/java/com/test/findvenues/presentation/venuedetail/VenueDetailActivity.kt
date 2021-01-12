@@ -13,6 +13,7 @@ import com.squareup.picasso.Picasso
 import com.test.findvenues.R
 import com.test.findvenues.databinding.ActivityVenueDetailBinding
 import com.test.findvenues.di.Components
+import com.test.findvenues.presentation.VenueModule
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.Disposable
 
@@ -43,6 +44,7 @@ class VenueDetailActivity : AppCompatActivity() {
         val factory = DaggerVenueDetailComponent.builder()
                 .appComponent(Components.appComponent())
                 .venueDetailModule(VenueDetailModule(venueId))
+                .venueModule(VenueModule(this))
                 .build()
                 .venueDetailViewModelFactory()
 

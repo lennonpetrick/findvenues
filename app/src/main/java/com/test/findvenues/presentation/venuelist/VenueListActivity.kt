@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.test.findvenues.R
 import com.test.findvenues.databinding.ActivityVenueListBinding
 import com.test.findvenues.di.Components
+import com.test.findvenues.presentation.VenueModule
 import com.test.findvenues.presentation.venuedetail.VenueDetailActivity
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.Disposable
@@ -32,7 +33,7 @@ class VenueListActivity : AppCompatActivity() {
 
         val factory = DaggerVenueListComponent.builder()
                 .appComponent(Components.appComponent())
-                .venueListModule(VenueListModule())
+                .venueModule(VenueModule(this))
                 .build()
                 .venueListViewModelFactory()
 
