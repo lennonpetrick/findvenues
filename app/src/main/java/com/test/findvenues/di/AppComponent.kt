@@ -1,5 +1,7 @@
 package com.test.findvenues.di
 
+import com.test.findvenues.datasource.local.database.AppDatabase
+import com.test.findvenues.di.modules.DatabaseModule
 import com.test.findvenues.di.modules.NetworkModule
 import com.test.findvenues.di.modules.SchedulerModule
 import com.test.findvenues.di.qualifiers.IOScheduler
@@ -11,7 +13,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [NetworkModule::class, SchedulerModule::class])
+@Component(modules = [NetworkModule::class, SchedulerModule::class, DatabaseModule::class])
 internal interface AppComponent {
 
     @IOScheduler
@@ -30,5 +32,7 @@ internal interface AppComponent {
     fun version(): String
 
     fun retrofit(): Retrofit
+
+    fun appDatabase(): AppDatabase
 
 }

@@ -7,7 +7,7 @@ internal class MainApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Components.init()
+        Components.init(this)
     }
 
 }
